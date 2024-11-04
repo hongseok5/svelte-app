@@ -1,7 +1,8 @@
 <script>
   import First from "../components/First.svelte"
-  import Second from "../components/Second.svelte"
+  import Info from "../components/Info.svelte"
   import Child from "../components/Child.svelte"
+  import StyleProps from "../components/StyleProps.svelte"
   import { bubble } from "svelte/internal";
   let current = "foo"
   let current2 = "foo"
@@ -28,7 +29,9 @@
       bar: "bar"
     }
   }
-
+  const pkg = {
+    name : "svelte", version : 3, speed: 'blazing', website: 'https://svelte.dev'
+  }
   function handleClick2(){
     test.foo.bar = 'baz'
     // 아래처럼 하면 안된다. 최상위 test가 변경되어야 한다.
@@ -52,6 +55,15 @@
 </script>
 
 <style>
+
+html {
+  --theme-color: blue;
+}
+
+div {
+  color: var(--theme-color)
+}
+
 button.active {
   background-color: #4CAF50; /* 활성화 상태일 때 초록색 배경 */
   color: white; /* 활성화 상태일 때 흰색 텍스트 */
@@ -109,7 +121,9 @@ div.active :global(p) {
   <button on:click="{(e) => count +=1 }" > count : {count}</button>
 
 </div>
-
+<div>
+  test
+</div>
 <p>{arr}</p>
 <button on:click="{addNumber}" > add</button>
 
@@ -119,3 +133,6 @@ div.active :global(p) {
 <p>{doubled}</p>
 
 <button on:click="{(event) => {count2 +=1}}">count2 : {count2}</button>
+
+<Info {...pkg} />
+<StyleProps --theme-color="red" />

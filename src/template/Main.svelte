@@ -23,7 +23,15 @@ button {
 <script>
     import { selectedPage } from '../store/store.js';
     import Tutorial from '../pages/Tutorial.svelte'
+    import Tutorial2 from '../pages/Tutorial2.svelte'
+    import Tutorial3 from '../pages/Tutorial3.svelte'
+    import Tutorial6 from '../pages/Tutorial6.svelte'
+    import Tutorial4 from '../pages/Tutorial4.svelte'
+    import Tutorial5 from '../pages/Tutorial5.svelte'
+    import Tutorial7 from '../pages/Tutorial7.svelte'
+    import Tutorial8 from '../pages/Tutorial8.svelte'
     import Word from '../pages/Word.svelte'
+    import DashBoard from '../pages/DashBoard.svelte'
     import App from '../App.svelte';
     let page;
     $: selectedPage.subscribe(value => {
@@ -35,14 +43,26 @@ button {
 <main>
     {#if page === 'home'}
         <h1>Home Page</h1>
-    {:else if page === 'about'}
-        <h1>About Page</h1>
+    {:else if page === 'dashboard'}
+      <DashBoard></DashBoard>
     {:else if page === 'contact'}
         <h1>Contact Page</h1>
     {:else if page === 'word'}
       <Word />
-    {:else }
-      <Tutorial />      
+    {:else if page === 'tutorial'}
+      <Tutorial />   
+    {:else if page === 'tutorial2'}
+      <Tutorial2 />       
+    {:else if page === 'tutorial4'}
+      <Tutorial4 />        
+    {:else if page === 'tutorial5'}
+      <Tutorial5 />          
+    {:else if page === 'tutorial6'}
+      <Tutorial6 />     
+    {:else if page === 'tutorial7'}
+      <Tutorial7 />   
+    {:else if page === 'tutorial8'}
+      <Tutorial8 />                       
     {/if}
 
 </main>

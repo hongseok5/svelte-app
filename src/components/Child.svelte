@@ -1,1 +1,5 @@
-<p>Active 되면 글자색을 바꾸고 싶어요. </p>
+<script>
+    export let text = 'default value'
+</script>
+
+<p> {text} </p>

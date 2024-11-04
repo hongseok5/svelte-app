@@ -29,7 +29,9 @@
     selectedPage.set(page)
   }
 
-  let menuItems = ["Home", "About", "Services", "Tutorial", "Word"];   // DB에서 받아온다
+  let menuItems = [
+    "Home", "DashBoard", "Services", "Tutorial", "Tutorial2", "Tutorial3"
+    , "Tutorial4","Tutorial5","Tutorial6", "Tutorial7", "Tutorial8", "Word"];   // DB에서 받아온다
   //SideNav.svelte에서 사용자가 버튼을 클릭할 때마다 selectedPage 스토어에 해당 페이지를 설정합니다.
 </script>
 <nav>
