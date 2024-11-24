@@ -34,4 +34,4 @@ function createCount(){
     }
 }
 
-export const customCount = createCount();
+export const teamId = 1;
