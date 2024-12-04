@@ -16,10 +16,12 @@
     // 데이터를 fetch하는 함수
     const fetchData = async () => {
       console.log("fetchData")
+      const token = localStorage.getItem('token');
       const response = await fetch(appConfig.apiEndpoint + "/match/matches", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify({ homeTeamId : 1})
       });

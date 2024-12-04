@@ -4,6 +4,7 @@ import { readable} from 'svelte/store';
 import { appConfig } from '../../config'
 //store.js에서 writable 스토어를 사용하여 선택된 페이지 상태를 관리합니다.
 export const selectedPage = writable(appConfig.defaultPage);
+export const isLoggedIn = writable(false)
 export const count = writable(0, (set) => {
     //store의 값 업데이트 - set 이라는 사용자 함수를 생성한다? update랑 subscribe는 기본적으로 반환됨
     

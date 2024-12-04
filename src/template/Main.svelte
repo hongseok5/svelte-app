@@ -34,11 +34,13 @@
     import User from '../pages/User.svelte'
     import Word from '../pages/Word.svelte'
     import DashBoard from '../pages/DashBoard.svelte'
+    import Join from '../pages/Join.svelte';
+    import Login from '../pages/Login.svelte';
+
     export let isSideNavOpen = true;
     let page;
     $: selectedPage.subscribe(value => {
       page = value;
-      console.log(page)
     });   
   // Main.svelte는 selectedPage 스토어의 값을 구독하고, 그 값에 따라 메인 화면에 다른 내용을 렌더링합니다.
 </script>
@@ -58,7 +60,11 @@
     {:else if page === 'team'}
       <Team />          
     {:else if page === 'match'}
-      <Match />                       
+      <Match />                  
+    {:else if page === 'join'}
+      <Join />
+    {:else if page === 'login'}
+      <Login />     
     {/if}
 
 </main>
